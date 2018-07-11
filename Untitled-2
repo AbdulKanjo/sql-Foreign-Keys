@@ -1,0 +1,200 @@
+/* select * from Invoice i 
+join InvoiceLine il on i.invoiceId = il.invoiceId where il.UnitPrice>0.99
+ */
+
+/* select i.InvoiceDate, c.FirstName, c.LastName , i.total
+from Invoice i
+join Customer c on i.CustomerId=c.CustomerId; */
+
+/* select c.FirstName, c.LastName, e.FirstName, e.LastName 
+from Customer c 
+join Employee e on c.CustomerId=e.EmployeeId; */
+
+
+/* select pt.TrackId
+from PlaylistTrack pt
+join Playlist pl on pt.TrackId=pl.PlaylistId
+where pl.name = 'Music' */
+
+
+/* select t.name
+from track t
+join Playlist p on t.TrackId=p.PlaylistId
+where PlaylistId=5 */
+
+/* select * from Invoice i 
+join InvoiceLine il on i.invoiceId = il.invoiceId where il.UnitPrice>0.99 */
+
+
+/* select *
+from PlaylistTrack 
+where PlaylistId in (select playlistId from playlist where name='Music') */
+
+/* select name
+from track 
+where TrackId in (select TrackId from PlaylistTrack where Playlistid=5); */
+
+/* select * 
+from track
+where GenreId in (select GenreId from Genre where name='Comedy'); */
+
+
+/* select *
+from Track
+where AlbumId in (select AlbumId from Album where Title='Fireball'); */
+
+
+
+/* select * 
+from Track 
+where AlbumId in(
+  select AlbumId from Album where ArtistId in (
+    select ArtistId from Artist where Name='Queen'
+    )) */
+    
+/* update Customer set fax=null where fax is null; */
+
+
+
+/* update Customer set company='Self' where company is null; */
+
+/* update Customer set LastName='Thompson' where FirstName='Julia' and LastName='Barnett'; */
+
+/* update Customer
+set SupportRepId = 4
+where Email = "luisrojas@yahoo.cl"; */
+
+
+
+/* update track 
+set Composer = "The darkness around us"
+where GenreId = ( select GenreId from Genre where Name = "Metal" )
+and Composer is null; */
+
+
+/* select count(*),g.Name
+from Track T
+join Genre g on t.GenreId=g.Genreid
+group by g.name; */
+
+
+/* select count(*),g.Name
+from Track T
+join Genre g on t.GenreId=g.Genreid
+where g.name='Pop' or g.name='Rock'
+group by g.name; */
+
+
+
+
+/* select ar.name, Count(*)
+from Artist ar
+join Album al on ar.ArtistId=al.ArtistId
+group by al.ArtistId */
+
+
+
+
+/* select distinct Composer from Track; */
+
+
+/* select distinct BillingPostalCode from Invoice; */
+
+
+/* select distinct Company from Customer; */
+
+
+/* CREATE TABLE practice_delete ( Name string, Type string, Value integer );
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "bronze", 50);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "bronze", 50);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "bronze", 50);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "silver", 100);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "silver", 100);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+
+SELECT * FROM practice_delete; */
+
+
+
+
+/* delete from practice_delete where Type ='bronze'; */
+
+/* delete from practice_delete where Type ='silver'; */
+
+
+
+/* delete from practice_delete where value =150 */
+
+
+/* create table Users (
+  ID INTEGER PRIMARY KEY,
+  name TEXT,
+  email TEXT
+); */
+
+/* create table Products (
+  ID INTEGER PRIMARY KEY,
+  name TEXT,
+  price INTEGER
+); */
+
+
+
+
+
+
+/* create table Users (
+  ID INTEGER PRIMARY KEY,
+  name TEXT,
+  email TEXT
+); */
+
+/* create table Products (
+  ID INTEGER PRIMARY KEY,
+  name TEXT,
+  price INTEGER
+); */
+
+
+/* create table Orders (
+  ID INTEGER PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  FOREIGN KEY(ID) REFERENCES Products(ID)
+); */
+ 
+/* create table Products (
+  ProductID INTEGER PRIMARY KEY,
+  name TEXT,
+  price INTEGER
+); */
+
+
+
+
+/* create table Orders (
+  ID INTEGER PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  ProductID REFERENCES Products(ProductID)
+); */
+
+
+/* insert into Products(name,price) values ('car',123213) */
+
+/* select * from Products */
+/* insert into Products(name,price) values ('phone',234324) */
+
+
+/* insert into Orders(name,email,ProductId) values ('Abdul','sadbkjbad',1) */
+
+/* select * from users */
+
+/* select * from Orders */
+
+/* select * from Products */
+
+/* UPDATE Orders SET user = 'id' WHERE user = id;  */
