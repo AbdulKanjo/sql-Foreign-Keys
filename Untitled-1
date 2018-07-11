@@ -1,0 +1,26 @@
+/* CREATE TABLE Movie (
+  ID INTEGER PRIMARY KEY,
+  Title TEXT,
+  MediaTypeId INTEGER, 
+  FOREIGN KEY(MediaTypeId) REFERENCES MediaType(MediaTypeId)
+); */
+
+/* INSERT INTO Movie (Title,MediaTypeId) VALUES ('batman',3); */
+
+/* select * from Movie; */
+
+/* alter table Movie add column GenreId integer references Genre(GenreId); */
+
+/* select * from Movie; */
+
+
+/* update Movie set GenreId=22 where id=1; */
+
+
+/* select * from Movie; */
+
+
+
+/* select a.title, ar.name
+from album a
+join artist ar on a.artistid=ar.artistid */
